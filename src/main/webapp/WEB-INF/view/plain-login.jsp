@@ -4,6 +4,12 @@
 <html>
 	<head>
 		<title>Custom Login Page</title>
+		
+		<style>
+			.failed {
+				color: red;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -12,7 +18,7 @@
 		<form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST">
 			
 			<c:if test="${param.error != null}">
-				<i>You entered invalid username/password.</i>
+				<i class="failed">You entered invalid username/password.</i>
 			</c:if>
 		
 			<p>
