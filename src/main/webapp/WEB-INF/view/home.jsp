@@ -21,19 +21,21 @@
 			User: <security:authentication property="principal.username" />
 			<br><br>
 			Role(s): <security:authentication property="principal.authorities" />
-		</p>
+		</p>	
 		
-		<hr>
+		<security:authorize access="hasRole('MANAGER')">
+			<p>
+				<a href="${pageContext.request.contextPath}/leaders">Manager page</a>
+				(Only for managers)
+			</p>
+		</security:authorize>
 		
-		<p>
-			<a href="${pageContext.request.contextPath}/leaders">Manager page</a>
-			(Only for managers)
-		</p>
-		
-		<p>
-			<a href="${pageContext.request.contextPath}/systems">Admin page</a>
-			(Only for admins)
-		</p>
+		<security:authorize access="hasRole('ADMIN')">
+			<p>
+				<a href="${pageContext.request.contextPath}/systems">Admin page</a>
+				(Only for admins)
+			</p>
+		</security:authorize>
 		
 		<hr>
 	
