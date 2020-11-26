@@ -24,6 +24,13 @@
 		</p>
 		
 		<hr>
+		
+		<p>
+			<a href="${pageContext.request.contextPath}/leaders">Leadership meeting</a>
+			(Only for managers)
+		</p>
+		
+		<hr>
 	
 		<form:form action="${pageContext.request.contextPath}/logout" method ="POST">
 			<input type="submit" value="Logout" />
