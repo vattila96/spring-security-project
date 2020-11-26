@@ -1,15 +1,15 @@
 <html>
 	<head>
-		<title>Managers Home Page</title>
+		<title>Admins Home Page</title>
 	</head>
 	
 	<body>
-		<h2>Managers Home Page</h2>
+		<h2>Admins Home Page</h2>
 		
 		<hr>
 		
 		<p>
-			This page is for users who have manager role.
+			This page is for users who have admin role.
 		</p>
 		
 		<hr>
