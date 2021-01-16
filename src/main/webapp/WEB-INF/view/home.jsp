@@ -3,44 +3,73 @@
 
 <html>
 
-	<head>
-		<title>luv2code Company Home Page</title>
-	</head>
+<head>
+	<title>luv2code Company Home Page</title>
+</head>
 
-	<body>
-		<h2>luv2code Company Home Page</h2>
-		<hr>
+<body>
+	<h2>luv2code Company Home Page</h2>
+	<hr>
 	
+	<p>
+	Welcome to the luv2code company home page!
+	</p>
+	
+	<hr>
+	
+	<!-- display user name and role -->
+	
+	<p>
+		User: <security:authentication property="principal.username" />
+		<br><br>
+		Role(s): <security:authentication property="principal.authorities" />
+		<br><br>
+		First name: ${user.firstName}, Last name: ${user.lastName}, Email: ${user.email}
+	</p>
+	
+	<security:authorize access="hasRole('MANAGER')">
+	
+		<!-- Add a link to point to /leaders ... this is for the managers -->
+		
 		<p>
-			Welcome to the luv2code company home page!
+			<a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>
+			(Only for Manager peeps)
 		</p>
-		
-		<hr>
+
+	</security:authorize>	
+	
+	
+	<security:authorize access="hasRole('ADMIN')">  
+
+		<!-- Add a link to point to /systems ... this is for the admins -->
 		
 		<p>
-			User: <security:authentication property="principal.username" />
-			<br><br>
-			Role(s): <security:authentication property="principal.authorities" />
-		</p>	
-		
-		<security:authorize access="hasRole('MANAGER')">
-			<p>
-				<a href="${pageContext.request.contextPath}/leaders">Manager page</a>
-				(Only for managers)
-			</p>
-		</security:authorize>
-		
-		<security:authorize access="hasRole('ADMIN')">
-			<p>
-				<a href="${pageContext.request.contextPath}/systems">Admin page</a>
-				(Only for admins)
-			</p>
-		</security:authorize>
-		
-		<hr>
+			<a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a>
+			(Only for Admin peeps)
+		</p>
 	
-		<form:form action="${pageContext.request.contextPath}/logout" method ="POST">
-			<input type="submit" value="Logout" />
-		</form:form>
-	</body>
+	</security:authorize>
+	
+	<hr>
+	
+	
+	<!-- Add a logout button -->
+	<form:form action="${pageContext.request.contextPath}/logout" 
+			   method="POST">
+	
+		<input type="submit" value="Logout" />
+	
+	</form:form>
+	
+</body>
+
 </html>
+
+
+
+
+
+
+
+
+
