@@ -1,5 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 
 <!doctype html>
 <html lang="en">
@@ -36,25 +36,34 @@
 				<div style="padding-top: 30px" class="panel-body">
 
 					<!-- Login Form -->
-					<form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST" class="form-horizontal">
+					<form action="${pageContext.request.contextPath}/authenticateTheUser" 
+						  method="POST" class="form-horizontal">
 
 					    <!-- Place for messages: error, alert etc ... -->
 					    <div class="form-group">
 					        <div class="col-xs-15">
 					            <div>
-					            
-					           	 	<c:if test="${param.error != null}">
+								
+									<!-- Check for login error -->
+								
+									<c:if test="${param.error != null}">
+										
 										<div class="alert alert-danger col-xs-offset-1 col-xs-10">
 											Invalid username and password.
 										</div>
+		
 									</c:if>
-																			
-					           	 	<c:if test="${param.logout != null}">
+										
+									<!-- Check for logout -->
+
+									<c:if test="${param.logout != null}">
+										            
 										<div class="alert alert-success col-xs-offset-1 col-xs-10">
 											You have been logged out.
 										</div>
-									</c:if>	
-																									            									
+								    
+									</c:if>
+									
 					            </div>
 					        </div>
 					    </div>
@@ -80,10 +89,20 @@
 							</div>
 						</div>
 
-					</form:form>
+						<!-- I'm manually adding tokens ... Bro! -->
+
+						<input type="hidden"
+							   name="${_csrf.parameterName}"
+							   value="${_csrf.token}" />
+						
+					</form>
 
 				</div>
+				
+			</div>
 
+			<div>
+				<a href="${pageContext.request.contextPath}/register/showRegistrationForm" class="btn btn-primary" role="button" aria-pressed="true">Register New User</a>
 			</div>
 
 		</div>
