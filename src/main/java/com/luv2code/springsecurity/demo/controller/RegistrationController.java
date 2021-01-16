@@ -73,6 +73,6 @@ public class RegistrationController {
         
         logger.info("Successfully created user: " + userName);
         
-        return "registration-confirmation";	
+        return "registration-confirmation";		
 	}
 }
