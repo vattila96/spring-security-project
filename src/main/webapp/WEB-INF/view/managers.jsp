@@ -1,11 +1,15 @@
 <html>
 	<head>
-		<title>Access denied</title>
+		<title>Managers home page</title>
 	</head>
-
+	
 	<body>
-		<h2>Access denied - you are not authorized to access this resource.</h2>
+		<h2>Managers home page</h2>
 		<hr>
+		<p>
+			Info for managers...
+		</p>
+				
 		<a href="${pageContext.request.contextPath}/">Back to home page</a>
 	</body>
 </html>
