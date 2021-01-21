@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.luv2code</groupId>
-	<artifactId>spring-security-custom-user-registration-demo</artifactId>
+	<groupId>com.attilavarga</groupId>
+	<artifactId>spring-security-project</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>spring-security-custom-user-registration-demo</name>
+	<name>spring-security-project</name>
 
 	<properties>
 		<springframework.version>5.2.5.RELEASE</springframework.version>
@@ -22,15 +22,11 @@
 
 	<dependencies>
 
-		<!-- Spring MVC support -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-
-		<!-- Spring Security -->
-		<!-- spring-security-web and spring-security-config -->
 		
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
@@ -44,36 +40,30 @@
 		    <version>${springsecurity.version}</version>
 		</dependency>	
 		
-		<!-- Add Spring Security Taglibs support -->
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-taglibs</artifactId>
 		    <version>${springsecurity.version}</version>
 		</dependency>	
 		
-		  <!-- Spring Transactions -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${springframework.version}</version>
         </dependency>
         
-        <!-- Spring ORM -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
             <version>${springframework.version}</version>
         </dependency>
 
- 		<!-- Hibernate Core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
 		
-		<!-- Add MySQL and C3P0 support -->
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -86,8 +76,6 @@
 			<version>${c3po.version}</version>
 		</dependency>
 				
-		
-		<!-- Servlet, JSP and JSTL support -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -113,7 +101,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Hibernate Validator -->
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-validator</artifactId>
@@ -124,11 +111,10 @@
 
 
 	<build>
-		<finalName>spring-security-custom-user-registration-demo</finalName>
+		<finalName>spring-security-project</finalName>
 	
 		<plugins>
 			<plugin>
-				<!-- Add Maven coordinates (GAV) for: maven-war-plugin -->
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-war-plugin</artifactId>
 			    <version>3.2.0</version>					
@@ -136,6 +122,5 @@
 		</plugins>
 
 	</build>
-
 
 </project>
